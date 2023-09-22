@@ -1,0 +1,100 @@
+$mobile: 768px;
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 280px;
+  background-color: #090b1a;
+  color: #fff;
+  font-size: 15px;
+
+  .wrapper {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 20px;
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+      height: 80vh;
+    }
+
+    .preview {
+      background-color: #1b1938;
+      padding: 50px;
+      flex: 1;
+      @media (max-width: $mobile) {
+        padding: 30px;
+        text-align: center;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      header {
+        h1 {
+          font-size: clamp(28px, 2.5vw, 40px);
+          line-height: 1.2;
+          font-weight: 700;
+
+          span {
+            color: #aa5cdb;
+          }
+        }
+        p {
+          line-height: 1.6;
+          font-size: 15px;
+          margin: 30px 0 60px;
+          color: #ffffffbf;
+          max-width: 80%;
+          @media (max-width: $mobile) {
+            max-width: 100%;
+            margin: 20px;
+          }
+        }
+      }
+
+      footer {
+        display: flex;
+        gap: 20px;
+        max-width: 80%;
+        justify-content: space-between;
+        @media (max-width: $mobile) {
+          max-width: 100%;
+          flex-direction: column;
+        }
+        div {
+          h2 {
+            font-size: 20px;
+            font-weight: 700;
+          }
+          p {
+            font-size: 12px;
+            color: #ffffff99;
+          }
+        }
+      }
+    }
+
+    .banner {
+      position: relative;
+      background: url('../../public/images/image-header-desktop.jpg') no-repeat
+        center center / cover;
+      flex: 1;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(112, 16, 163, 0.5);
+      }
+    }
+  }
+}
